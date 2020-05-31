@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="jumbotron">
+    <h1 class="display-4">Space X - Lanunches</h1>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-6">
+
+      <div *ngFor="let item of launches">
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{item.mission_name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{item.launch_date_local | date}}</h6>
+            <p class="card-text">{{item.rocket.second_stage.payloads[0].payload_type}}</p>
+            <p class="card-text">{{item.launch_site.site_name_long}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
